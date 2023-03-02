@@ -24,8 +24,7 @@ namespace Listboxes
         {
             InitializeComponent();
 
-            float width = Convert.ToSingle(width_tbx.Text);
-            float height = Convert.ToSingle(height_tbx.Text);
+          
 
             // calculated
 
@@ -42,13 +41,17 @@ namespace Listboxes
 
         private void Count_btn_Click(object sender, RoutedEventArgs e)
         {
-            switch(material_cmb.SelectedIndex)
+            float width = Convert.ToSingle(width_tbx.Text);
+            float height = Convert.ToSingle(height_tbx.Text);
+
+            switch (material_cmb.SelectedIndex)
             {
                 // plastic
 
                 case 0:
 
-
+                    size_tbk.Text = "Size: " + (width * height).ToString();
+                    price_tbk.Text = "Price: " + (width * height * 300).ToString();
 
                     break;
  
@@ -56,6 +59,13 @@ namespace Listboxes
 
                 case 1:
 
+
+                    size_tbk.Text = "Size: " + (width * height).ToString();
+                    price_tbk.Text = "Price: " + (width * height * 300 * 2).ToString();
+                    break;
+
+                default:
+                    MessageBox.Show("choose material");
                     break;
             }
         }
